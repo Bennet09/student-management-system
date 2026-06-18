@@ -1,0 +1,37 @@
+<h2>Student Management System</h2>
+
+<!-- ADD STUDENT FORM -->
+<div>
+  <input [(ngModel)]="student.name" placeholder="Student Name" />
+  <input [(ngModel)]="student.course" placeholder="Course" />
+
+  <button (click)="saveStudent()">
+  {{ editIndex === null ? 'Add Student' : 'Update Student' }}
+</button>
+</div>
+
+<hr />
+
+<!-- SEARCH -->
+<input [(ngModel)]="searchText" placeholder="Search student..." />
+
+<hr />
+
+<!-- STUDENT TABLE -->
+<table border="1" width="100%">
+  <tr>
+    <th>Name</th>
+    <th>Course</th>
+    <th>Action</th>
+  </tr>
+
+ <tr *ngFor="let s of filteredStudents; let i = index">
+  <td>{{ s.name }}</td>
+  <td>{{ s.course }}</td>
+  <td>
+    <button (click)="viewStudent(s)">View</button>
+    <button (click)="editStudent(i)">Edit</button>
+    <button (click)="deleteStudent(i)">Delete</button>
+  </td>
+</tr>
+</table>

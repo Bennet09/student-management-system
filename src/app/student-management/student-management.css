@@ -1,0 +1,48 @@
+h2 {
+  text-align: center;
+  color: #e2e5e8;
+}
+
+.form-box {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+input {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 8px 12px;
+  border: none;
+  background: #3498db;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+table {
+  margin-top: 10px;
+  border-collapse: collapse;
+}
+
+td, th {
+  padding: 10px;
+  text-align: center;
+}
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: black;
+  color: white;
+  padding: 20px;
+}
