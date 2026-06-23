@@ -5,11 +5,11 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule],   // 👈 THIS FIXES ngModel
+  imports: [FormsModule],
   templateUrl: './login.html',
   styleUrls: ['./login.css']
 })
-export class Login {
+export class LoginComponent {
 
   username = '';
   password = '';

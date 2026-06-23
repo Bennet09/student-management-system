@@ -1,48 +1,104 @@
-h2 {
-  text-align: center;
-  color: #e2e5e8;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
-.form-box {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  margin-bottom: 15px;
-}
-
-input {
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-button {
-  padding: 8px 12px;
-  border: none;
-  background: #3498db;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-button:hover {
-  background: #2980b9;
-}
-
-table {
-  margin-top: 10px;
-  border-collapse: collapse;
-}
-
-td, th {
-  padding: 10px;
-  text-align: center;
-}
-
+/* Full page background like login */
 :host {
   display: block;
   min-height: 100vh;
-  background-color: black;
+  background: linear-gradient(
+    135deg,
+    #0f172a,
+    #1e293b,
+    #334155
+  );
   color: white;
-  padding: 20px;
+}
+
+/* Center container */
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Card (same style as login-card) */
+.card {
+  width: 90%;
+  max-width: 800px;
+  padding: 30px;
+  border-radius: 15px;
+
+  background-color: #1e293b;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+
+  color: white;
+}
+
+/* Title */
+h2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+
+  border: none;
+  border-radius: 8px;
+
+  box-sizing: border-box;
+}
+
+/* Buttons (same as login) */
+button {
+  width: auto;
+  padding: 6px 10px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+  border-radius: 6px;
+  margin: 2px;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #2563eb;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: #0f172a;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th {
+  background: #334155;
+  padding: 12px;
+  color: white;
+}
+
+td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #334155;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    width: 95%;
+  }
 }
