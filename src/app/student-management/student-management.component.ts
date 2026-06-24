@@ -26,8 +26,25 @@ export class StudentManagementComponent implements OnInit {
   constructor(private studentService: StudentService) {}
 
 ngOnInit() {
+
   const saved = localStorage.getItem('students');
-  this.students = saved ? JSON.parse(saved) : [];
+
+  if (saved) {
+    this.students = JSON.parse(saved);
+  } else {
+    this.studentService.getStudents().subscribe((data: any) => {
+
+      this.students = data.map((user: any) => ({
+        name: user.name,
+        course: user.company?.name || 'Computer Science'
+      }));
+
+      localStorage.setItem(
+        'students',
+        JSON.stringify(this.students)
+      );
+    });
+  }
 }
 
   loadStudents() {
