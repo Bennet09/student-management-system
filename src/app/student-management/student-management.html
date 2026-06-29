@@ -1,16 +1,27 @@
 <div class="page-container">
-  <div class="card">
+
+  <!-- Navigation -->
+  <div class="menu">
+    <button (click)="showPage('students')">👨‍🎓 Students</button>
+    <button (click)="showPage('expenses')">💳 Expenses</button>
+    <button (click)="showPage('income')">💰 Income</button>
+    <button (click)="showPage('budgets')">📊 Budgets</button>
+    <button (click)="showPage('reports')">📈 Reports</button>
+  </div>
+
+  <!-- STUDENTS PAGE -->
+  <div class="card" *ngIf="currentPage === 'students'">
 
     <h2>Student Management</h2>
 
-    <input [(ngModel)]="student.name" placeholder="Student Name" />
-    <input [(ngModel)]="student.course" placeholder="Course" />
+    <input [(ngModel)]="student.name" placeholder="Student Name">
+    <input [(ngModel)]="student.course" placeholder="Course">
 
     <button (click)="saveStudent()">
       {{ editIndex === null ? 'Add Student' : 'Update Student' }}
     </button>
 
-    <input [(ngModel)]="searchText" placeholder="Search student..." />
+    <input [(ngModel)]="searchText" placeholder="Search student...">
 
     <table>
       <tr>
@@ -23,11 +34,54 @@
         <td>{{ s.name }}</td>
         <td>{{ s.course }}</td>
         <td>
-          <button (click)="deleteStudent(i)">Delete</button>
           <button (click)="editStudent(i)">Edit</button>
+          <button (click)="deleteStudent(i)">Delete</button>
         </td>
       </tr>
     </table>
 
   </div>
+
+  <!-- EXPENSES PAGE -->
+  <div class="card" *ngIf="currentPage === 'expenses'">
+
+    <h2>Expense Manager</h2>
+
+    <input type="date">
+
+    <select>
+      <option>Food</option>
+      <option>Transport</option>
+      <option>Shopping</option>
+      <option>Entertainment</option>
+      <option>Bills</option>
+      <option>Other</option>
+    </select>
+
+    <input type="number" placeholder="Amount">
+
+    <input type="text" placeholder="Description">
+
+    <button>Add Expense</button>
+
+  </div>
+
+  <!-- INCOME PAGE -->
+  <div class="card" *ngIf="currentPage === 'income'">
+    <h2>Income</h2>
+    <p>Income page coming next...</p>
+  </div>
+
+  <!-- BUDGET PAGE -->
+  <div class="card" *ngIf="currentPage === 'budgets'">
+    <h2>Budgets</h2>
+    <p>Budget page coming next...</p>
+  </div>
+
+  <!-- REPORTS PAGE -->
+  <div class="card" *ngIf="currentPage === 'reports'">
+    <h2>Reports</h2>
+    <p>Charts and reports coming soon...</p>
+  </div>
+
 </div>
